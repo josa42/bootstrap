@@ -1,0 +1,9 @@
+caskroom/cask
+caskroom/fonts
+caskroom/unofficial
+caskroom/versions
+homebrew/dupes
+homebrew/versions
+homebrew/x11
+josegonzalez/php
+peco/peco

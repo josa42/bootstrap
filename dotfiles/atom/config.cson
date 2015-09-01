@@ -1,0 +1,105 @@
+"*":
+  "exception-reporting":
+    userId: "542e836c-b6cb-a5d0-3cf3-ab4ff7df3a70"
+  welcome:
+    showOnStartup: false
+  editor:
+    fontFamily: "Menlo"
+    showInvisibles: true
+    showIndentGuide: true
+    scrollPastEnd: true
+    useShadowDOM: true
+    invisibles: {}
+    autoIndentOnPaste: false
+    fontSize: 11
+  core:
+    disabledPackages: [
+      "linter-scss-lint"
+      "background-tips"
+      "dev-live-reload"
+      "feedback"
+      "Tern"
+      "spell-check"
+      "open-on-github"
+      "metrics"
+      "exception-reporting"
+      "scope-inspector"
+      "highlight-line"
+      "api-blueprint-preview"
+      "starred-package-installer"
+      "data-atom"
+      "linter-api-blueprint"
+      "vim-mode"
+      "js-refactor"
+      "refactor"
+      "autosave"
+      "enhanced-package-list"
+      "debugger"
+      "error-status"
+      "linter-jscs"
+      "themed-settings"
+      "draw-package"
+      "fancy-new-file"
+      "linter-eslint"
+      "Repl"
+    ]
+    audioBeep: false
+    ignoredNames: [
+      ".git"
+      ".hg"
+      ".svn"
+      ".DS_Store"
+      "._*"
+      "Thumbs.db"
+      "*.pbxproj"
+    ]
+    excludeVcsIgnoredPaths: false
+  metrics:
+    userId: "6220fef7ad23611cf93c60e35e352cc9d6738221"
+  "ask-stack":
+    autoDetectLanguage: true
+  "scope-inspector":
+    userId: "6220fef7ad23611cf93c60e35e352cc9d6738221"
+  "api-blueprint-preview":
+    grammars: [
+      "source.md"
+    ]
+  preview:
+    _analyticsUserId: "c11144ac-0d67-4e5f-999e-f6b2a23ce323"
+  "linter-less":
+    strictUnits: true
+    ignoreUndefinedVariables: true
+  clippy:
+    playSounds: false
+    showOnStartup: false
+    agent: "Genie"
+  "atom-beautify":
+    _analyticsUserId: "98e491fa-bbd4-431d-bff4-304b80255a50"
+    beautifyEntireFileOnSave: false
+  "linter-coffeelint":
+    coffeelintExecutablePath: "/Users/josa/.coffeelint.json"
+  linter:
+    ignoredLinterErrors: [
+      "jshint"
+    ]
+    statusBar: "Show error of the selected line"
+    showErrorTabLine: true
+    showErrorTabProject: false
+  "autocomplete-plus": {}
+  "linter-eslint":
+    disableWhenNoEslintrcFileInPath: true
+  "ember-cli-helper": {}
+  "tree-view": {}
+  "one-dark-ui":
+    layoutMode: "Compact"
+  "linter-shellcheck":
+    shellcheckExecutablePath: "/usr/local/bin/shellcheck"
+  readme:
+    showBundledPackages: true
+  "linter-jshint": {}
+  blame: {}
+  "git-wip":
+    wipOnSave: false
+  "linter-php": {}
+  tabs:
+    usePreviewTabs: true

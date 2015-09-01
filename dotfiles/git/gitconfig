@@ -1,0 +1,104 @@
+[user]
+	name = Josa Gesell
+	email = josa.gesell@ligadigital.com
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	ui = true
+
+[core]
+	excludesfile = /Users/jg01/.gitignore
+	# commentchar = -
+	quotepath = false
+	editor = subl -n -w
+	precomposeunicode = true
+
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
+	path = 
+
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+
+[github]
+	user = josa42
+
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[diff]
+	tool = Kaleidoscope
+
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+	trustExitCode = true
+
+[difftool]
+	prompt = false
+
+[mergetool]
+	prompt = false
+	keepBackup = false
+
+[merge]
+	tool = Kaleidoscope
+
+[alias]
+	each = submodule foreach git
+	all = "!all() { echo \"Entering '.'\"; git $*; git submodule foreach git $*; }; all"
+
+	recommit = "!git add -A; git commit --amend --no-edit"
+
+	ignored = clean -ndX
+
+	l = log --oneline
+	lg = log --graph --all --format=format:'%C(bold green)(%ar)%C(dim white) %C(reset)%C(white)%an - %s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
+	lb = log --all --format=format:'%C(bold green)(%ai)%C(dim white) %C(reset)%C(white)%an - %s%C(reset)'
+
+	update = !git pull && git submodule update
+	last = !git log --oneline | head -n1 | cut -d ' ' -f 2-
+	# rename = !git commit -am "$(git last)"
+
+	u = !git pull && git submodule update
+
+	fetch = !git fetch && !git remote update --prune
+
+	sub = submodule
+	su = submodule update
+
+	s = status --short
+	c = checkout
+	cl = clone
+	cm = commit
+	b = branch
+	a = add
+	aa = add -A
+	p = pull
+	f = fetch
+
+	fl = !git branch -r | grep -s feature || :
+
+	push-all = !git push && git submodule foreach git push
+	pull-all = !git pull && git submodule foreach git pull
+	tags = !git tag --list | node ~/development/tools/version-sort/main.js
+	fuck = reset HEAD --hard
+
+	cdiff = !git diff -w | cdiff -s -w0
+	cdiffc = !git diff -w --cached | cdiff -s -w0
+
+	# uebergeben = commit
+	# protokoll = log
+	# druecken = push
+	# ziehen = pull
+	# zustand = status
+	# zweig = branch
+	# markieren = tag
+
+[push]
+	default = current
+
+[credential]
+	helper = osxkeychain

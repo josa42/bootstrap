@@ -1,0 +1,31 @@
+# Your keymap
+#
+# Atom keymaps work similarly to stylesheets. Just as stylesheets use selectors
+# to apply styles to elements, Atom keymaps use selectors to associate
+# keystrokes with events in specific contexts.
+#
+# You can create a new keybinding in this file by typing "key" and then hitting
+# tab.
+#
+
+
+'body':
+  'cmd-<': 'native!'
+  'cmd->': 'native!'
+  # 'pageup': 'native!'
+  # 'pagedown': 'native!'
+  'alt-cmd-r':'window:reload'
+  'shift-alt-cmd-right': 'pane:split-right'
+  'shift-alt-cmd-left': 'pane:split-left'
+  'alt-cmd-right': 'window:focus-pane-on-right'
+  'alt-cmd-left': 'window:focus-pane-on-left'
+
+'.platform-darwin atom-pane atom-text-editor:not(.mini)':
+  'cmd-/':	'editor:toggle-line-comments'
+
+'atom-text-editor:not(.mini)':
+  'ctrl-e':	'editor:move-to-end-of-line'
+
+
+'.platform-darwin atom-text-editor':
+  'cmd-r': 'package-manager:reload-project-package'

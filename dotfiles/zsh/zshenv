@@ -1,0 +1,29 @@
+#
+# Defines environment variables.
+#
+# Authors:
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#
+
+# Ensure that a non-login, non-interactive shell has a defined environment.
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprofile"
+fi
+
+
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin
+PATH=$PATH:/sbin:/usr/X11/bin
+PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
+PATH=$PATH:$HOME/bin
+PATH=$PATH:$JAVA_HOME/bin
+PATH=$PATH:/usr/local/share/npm/bin
+PATH=$PATH:/usr/local/opt/ruby/bin
+PATH=$PATH:$HOME/.rvm/bin
+PATH=$PATH:./node_modules/.bin
+
+export PATH
+# export JAVA_HOME=`/usr/libexec/java_home`
+# export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/usr/local/Caskroom"
+export EDITOR=vim
+
+export GITCLICK_STORAGE_PATH=~/Dropbox/.sync/gitclick/.gitclick
