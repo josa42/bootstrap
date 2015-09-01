@@ -1,6 +1,6 @@
 [user]
 	name = Josa Gesell
-	email = josa@gesellme
+	email = josa@gesell.me
 
 [color]
 	diff = auto
@@ -10,7 +10,6 @@
 
 [core]
 	excludesfile = /Users/josa/.gitignore
-	# commentchar = -
 	quotepath = false
 	editor = subl -n -w
 	precomposeunicode = true
@@ -58,7 +57,8 @@
 	lg = log --graph --all --format=format:'%C(bold green)(%ar)%C(dim white) %C(reset)%C(white)%an - %s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
 	lb = log --all --format=format:'%C(bold green)(%ai)%C(dim white) %C(reset)%C(white)%an - %s%C(reset)'
 
-	update = !git pull && git submodule update
+	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
+
 	last = !git log --oneline | head -n1 | cut -d ' ' -f 2-
 	# rename = !git commit -am "$(git last)"
 
@@ -102,3 +102,6 @@
 
 [credential]
 	helper = osxkeychain
+
+[include]
+  path = .gitconfig.local
