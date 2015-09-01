@@ -9,12 +9,15 @@ DIR_BOOTSTRAP="$HOME/github/bootstrap"
 REPO_BOOTSTRAP="git@github.com:josa42/bootstrap.git"
 
 if [ ! -d "$DIR_BOOTSTRAP" ]; then
-  git clone $REPO_BOOTSTRAP
+  git clone $REPO_BOOTSTRAP $DIR_BOOTSTRAP
 fi
 
 cd $DIR_BOOTSTRAP
 
+git pull origin master
 
 ./homebrew/bootstrap.sh
 ./dotfiles/bootstrap.sh
 ./atom/bootstrap.sh
+./defaults/bootstrap.sh
+./keymap/bootstrap.sh

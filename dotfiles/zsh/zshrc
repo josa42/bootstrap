@@ -12,6 +12,7 @@ fi
 
 
 setopt rmstarsilent
+setopt clobber
 
 unalias rm
 # alias rm=""

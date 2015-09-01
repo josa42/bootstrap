@@ -1,0 +1,107 @@
+{
+  "NSGlobalDomain": [
+    "AppleFontSmoothing -int 2",
+    "AppleKeyboardUIMode -int 3",
+    "AppleShowAllExtensions -bool true",
+    "NSAutomaticSpellingCorrectionEnabled -bool false",
+    "NSDocumentSaveNewDocumentsToCloud -bool false",
+    "WebKitDeveloperExtras -bool true",
+    "NSTextShowsControlCharacters -bool true"
+  ],
+
+  "com.apple.BluetoothAudioAgent": [
+    "\"Apple Bitpool Min (editable)\" -int 40"
+  ],
+
+  "com.apple.Safari": [
+    "\"com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled\" -bool true",
+    "DebugSnapshotsUpdatePolicy -int 2",
+    "FindOnPageMatchesWordStartsOnly -bool false",
+    "IncludeDevelopMenu -bool true",
+    "IncludeInternalDebugMenu -bool true",
+    "ProxiesInBookmarksBar \"()\"",
+    "ShowFavoritesBar -bool false",
+    "ShowSidebarInTopSites -bool false",
+    "SuppressSearchSuggestions -bool true",
+    "UniversalSearchEnabled -bool false",
+    "WebKitDeveloperExtrasEnabledPreferenceKey -bool true"
+  ],
+
+  "com.apple.SoftwareUpdate": [
+    "ScheduleFrequency -int 1"
+  ],
+
+  "com.apple.Terminal": [
+    "\"Default Window Settings\" -string \"Pro\"",
+    "\"Startup Window Settings\" -string \"Pro\""
+  ],
+
+  "com.apple.terminal": [
+    "StringEncodings -array 4"
+  ],
+
+  "com.apple.TimeMachine": [
+    "DoNotOfferNewDisksForBackup -bool true"
+  ],
+
+  "com.apple.desktopservices": [
+    "DSDontWriteNetworkStores -bool true"
+  ],
+
+  "com.apple.dock": [
+    "autohide -bool true",
+    "persistent-apps -array",
+    "tilesize -int 36"
+  ],
+
+  "com.apple.frameworks.diskimages": [
+    "skip-verify -bool true",
+    "skip-verify-locked -bool true",
+    "skip-verify-remote -bool true"
+  ],
+
+  "com.apple.messageshelper.MessageController": [
+    "SOInputLineSettings -dict-add \"automaticEmojiSubstitutionEnablediMessage\" -bool false",
+    "SOInputLineSettings -dict-add \"automaticQuoteSubstitutionEnabled\" -bool false",
+    "SOInputLineSettings -dict-add \"continuousSpellCheckingEnabled\" -bool false"
+  ],
+
+  "com.apple.screensaver": [
+    "askForPassword -int 1",
+    "askForPasswordDelay -int 0"
+  ],
+
+  "com.apple.universalaccess": [
+    "reduceTransparency -bool true"
+  ],
+
+  "com.google.Chrome": [
+    "AppleEnableSwipeNavigateWithScrolls -bool false",
+    "DisablePrintPreview -bool true"
+  ],
+
+  "com.google.Chrome.canary": [
+    "AppleEnableSwipeNavigateWithScrolls -bool false",
+    "DisablePrintPreview -bool true"
+  ],
+
+  "com.apple.mail": [
+    "AddressesIncludeNameOnPasteboard -bool false"
+  ],
+
+  "com.apple.finder": [
+    "_FXShowPosixPathInTitle -bool true",
+    "FXEnableExtensionChangeWarning -bool false",
+    "ShowStatusBar -bool true",
+    "ShowExternalHardDrivesOnDesktop -bool true",
+    "FXPreferredViewStyle Nlsv"
+  ],
+
+
+  "com.apple.symbolichotkeys": [
+    "AppleSymbolicHotKeys -dict-add 32 '{  enabled = 0; }'",
+    "AppleSymbolicHotKeys -dict-add 33 '{  enabled = 0; }'",
+    "AppleSymbolicHotKeys -dict-add 34 '{  enabled = 0; }'",
+    "AppleSymbolicHotKeys -dict-add 35 '{  enabled = 0; }'"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+     "NSGlobalDomain": {
+        "Move focus to next window": "super+<",
+        "Move focus to previous window": "super+shift+<",
+        "Show Next Tab": "ctrl+tab",
+        "Show Previous Tab": "ctrl+shift+tab"
+    }
+}
