@@ -10,15 +10,25 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+
+fpath=(/usr/local/share/zsh-completions $fpath)
 
 setopt rmstarsilent
 setopt clobber
 
 unalias rm
-# alias rm=""
 
 
-alias git-bitbucket="node /Users/jg01/projects/git-bitbucket/bin/git-bitbucket.js"
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias g="git"
 
 alias b="brew"
 alias cask="brew cask"

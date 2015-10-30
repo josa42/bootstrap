@@ -68,7 +68,12 @@
     _analyticsUserId: "c11144ac-0d67-4e5f-999e-f6b2a23ce323"
   "linter-less":
     strictUnits: true
+    includePath: [
+      "/Users/josa/github/atom-rm/static/variables"
+      "/usr/bin/less"
+    ]
     ignoreUndefinedVariables: true
+    ieCompatibilityChecks: false
   clippy:
     playSounds: false
     showOnStartup: false
@@ -96,10 +101,15 @@
     shellcheckExecutablePath: "/usr/local/bin/shellcheck"
   readme:
     showBundledPackages: true
-  "linter-jshint": {}
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
   blame: {}
   "git-wip":
     wipOnSave: false
   "linter-php": {}
   tabs:
     usePreviewTabs: true
+  "linter-package-json-validator":
+    show_recommendations: false
+  "markdown-table-formatter": {}
+  "linter-annotations": {}
