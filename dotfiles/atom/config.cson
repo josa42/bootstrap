@@ -40,7 +40,6 @@
       "themed-settings"
       "draw-package"
       "fancy-new-file"
-      "linter-eslint"
       "Repl"
     ]
     audioBeep: false
@@ -53,7 +52,6 @@
       "Thumbs.db"
       "*.pbxproj"
     ]
-    excludeVcsIgnoredPaths: false
   metrics:
     userId: "6220fef7ad23611cf93c60e35e352cc9d6738221"
   "ask-stack":
@@ -85,6 +83,7 @@
     statusBar: "Show error of the selected line"
     showErrorTabLine: true
     showErrorTabProject: false
+    showErrorPanel: false
   "autocomplete-plus": {}
   "linter-eslint":
     disableWhenNoEslintrcFileInPath: true
@@ -96,7 +95,8 @@
     shellcheckExecutablePath: "/usr/local/bin/shellcheck"
   readme:
     showBundledPackages: true
-  "linter-jshint": {}
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
   blame: {}
   "git-wip":
     wipOnSave: false

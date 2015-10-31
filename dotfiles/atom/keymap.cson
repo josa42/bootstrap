@@ -19,6 +19,7 @@
   'shift-alt-cmd-left': 'pane:split-left'
   'alt-cmd-right': 'window:focus-pane-on-right'
   'alt-cmd-left': 'window:focus-pane-on-left'
+  'cmd-alt-n': 'advanced-open-file:toggle'
 
 '.platform-darwin atom-pane atom-text-editor:not(.mini)':
   'cmd-/':	'editor:toggle-line-comments'
