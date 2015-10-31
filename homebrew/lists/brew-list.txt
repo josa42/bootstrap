@@ -20,3 +20,6 @@ subversion
 tmux
 watchman
 wget
+zsh-history-substring-search
+zsh-syntax-highlighting
+zsh-completions
