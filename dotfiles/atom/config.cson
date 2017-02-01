@@ -1,114 +1,170 @@
 "*":
-  "exception-reporting":
-    userId: "542e836c-b6cb-a5d0-3cf3-ab4ff7df3a70"
-  welcome:
+  "activate-power-mode":
+    particles:
+      size: {}
+      spawnCount: {}
+      totalCount: {}
+    screenShake:
+      enabled: false
+  "api-blueprint-preview":
+    grammars: [
+      "source.md"
+    ]
+  "ask-stack":
+    autoDetectLanguage: true
+  "atom-beautify":
+    general:
+      _analyticsUserId: "98e491fa-bbd4-431d-bff4-304b80255a50"
+      beautifyEntireFileOnSave: false
+  "atom-slack-snippets":
+    tokens: [
+      "ligadigital|xoxp-11883943776-11881921427-23452167603-4fbd2c04b1"
+    ]
+  "autocomplete-plus": {}
+  blame: {}
+  clippy:
+    agent: "Genie"
+    playSounds: false
     showOnStartup: false
-  editor:
-    fontFamily: "Menlo"
-    showInvisibles: true
-    showIndentGuide: true
-    scrollPastEnd: true
-    useShadowDOM: true
-    invisibles: {}
-    autoIndentOnPaste: false
-    fontSize: 11
   core:
+    allowPendingPaneItems: false
+    audioBeep: false
+    closeEmptyWindows: false
+    destroyEmptyPanes: false
     disabledPackages: [
       "linter-scss-lint"
       "background-tips"
       "dev-live-reload"
       "feedback"
       "Tern"
-      "spell-check"
       "open-on-github"
       "metrics"
       "exception-reporting"
       "scope-inspector"
       "highlight-line"
-      "api-blueprint-preview"
       "starred-package-installer"
       "data-atom"
-      "linter-api-blueprint"
-      "vim-mode"
       "js-refactor"
       "refactor"
       "autosave"
       "enhanced-package-list"
       "debugger"
       "error-status"
-      "linter-jscs"
       "themed-settings"
       "draw-package"
       "fancy-new-file"
       "Repl"
+      "php-debug"
+      "activate-power-mode"
+      "linter-jscs2"
+      "vim-mode-plus"
+      "linter-jshint"
+      "linter-jscs"
+      "whitespace"
+      "linter-swiftlint"
     ]
-    audioBeep: false
     ignoredNames: [
+      "._*"
+      ".DS_Store"
+      ".DS_Store"
       ".git"
       ".hg"
       ".svn"
-      ".DS_Store"
-      "._*"
-      "Thumbs.db"
+      "*.min.css"
+      "*.min.js"
       "*.pbxproj"
+      "bower_components"
+      "node_modules"
+      "Thumbs.db"
+      "tmp/babel-output*"
+      "tmp/jshinter-output*"
     ]
-  metrics:
-    userId: "6220fef7ad23611cf93c60e35e352cc9d6738221"
-  "ask-stack":
-    autoDetectLanguage: true
-  "scope-inspector":
-    userId: "6220fef7ad23611cf93c60e35e352cc9d6738221"
-  "api-blueprint-preview":
-    grammars: [
-      "source.md"
+    openEmptyEditorOnStart: false
+    telemetryConsent: "no"
+    useCustomTitleBar: true
+  editor:
+    autoIndentOnPaste: false
+    fontFamily: "Menlo"
+    fontSize: 12
+    invisibles: {}
+    scrollPastEnd: true
+    showIndentGuide: true
+    showInvisibles: true
+    useShadowDOM: true
+  "ember-cli-helper": {}
+  "exception-reporting":
+    userId: "542e836c-b6cb-a5d0-3cf3-ab4ff7df3a70"
+  "git-wip":
+    wipOnSave: false
+  "go-plus":
+    currentPanelHeight: "34.50509770603228vh"
+    test: {}
+  linter:
+    errorPanelHeight: 310
+    ignoredLinterErrors: [
+      "jshint"
     ]
-  preview:
-    _analyticsUserId: "c11144ac-0d67-4e5f-999e-f6b2a23ce323"
+    showErrorInline: false
+    showErrorTabLine: true
+    showErrorTabProject: false
+    statusBar: "Show error of the selected line"
+  "linter-annotations": {}
+  "linter-coffeelint":
+    coffeelintExecutablePath: "/Users/josa/.coffeelint.json"
+  "linter-eslint":
+    disableFSCache: true
+    disableWhenNoEslintrcFileInPath: true
+  "linter-jscs":
+    esnext: true
+    onlyConfig: true
+  "linter-jscs2":
+    onlyConfig: true
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+    executablePath: "/usr/local/bin/jshint"
   "linter-less":
-    strictUnits: true
+    ieCompatibilityChecks: false
+    ignoreUndefinedVariables: true
     includePath: [
       "/Users/josa/github/atom-rm/static/variables"
       "/usr/bin/less"
     ]
-    ignoreUndefinedVariables: true
-    ieCompatibilityChecks: false
-  clippy:
-    playSounds: false
-    showOnStartup: false
-    agent: "Genie"
-  "atom-beautify":
-    _analyticsUserId: "98e491fa-bbd4-431d-bff4-304b80255a50"
-    beautifyEntireFileOnSave: false
-  "linter-coffeelint":
-    coffeelintExecutablePath: "/Users/josa/.coffeelint.json"
-  linter:
-    ignoredLinterErrors: [
-      "jshint"
-    ]
-    statusBar: "Show error of the selected line"
-    showErrorTabLine: true
-    showErrorTabProject: false
-    showErrorPanel: false
-  "autocomplete-plus": {}
-  "linter-eslint":
-    disableWhenNoEslintrcFileInPath: true
-  "ember-cli-helper": {}
-  "tree-view": {}
-  "one-dark-ui":
-    layoutMode: "Compact"
-  "linter-shellcheck":
-    shellcheckExecutablePath: "/usr/local/bin/shellcheck"
-  readme:
-    showBundledPackages: true
-  "linter-jshint":
-    disableWhenNoJshintrcFileInPath: true
-  blame: {}
-  "git-wip":
-    wipOnSave: false
-  "linter-php": {}
-  tabs:
-    usePreviewTabs: true
+    strictUnits: true
+  "linter-node-markdownlint":
+    disableIfNoMarkdownlintrc: true
   "linter-package-json-validator":
     show_recommendations: false
-  "markdown-table-formatter": {}
-  "linter-annotations": {}
+  "linter-php": {}
+  "linter-shellcheck":
+    shellcheckExecutablePath: "/usr/local/bin/shellcheck"
+  "markdown-preview": {}
+  "markdown-preview-plus":
+    useGitHubStyle: true
+  "markdown-preview-plus-opener":
+    closePreviewWhenClosingEditor: true
+  "markdown-table-formatter":
+    markdownGrammarScopes: [
+      "source.gfm"
+      "text.html.markdown.source.gfm.apib"
+    ]
+  metrics:
+    userId: "6220fef7ad23611cf93c60e35e352cc9d6738221"
+  "one-dark-ui":
+    layoutMode: "Compact"
+  preview:
+    _analyticsUserId: "c11144ac-0d67-4e5f-999e-f6b2a23ce323"
+  "preview-plus":
+    htmlp: true
+  readme:
+    showBundledPackages: true
+  "scope-inspector":
+    userId: "6220fef7ad23611cf93c60e35e352cc9d6738221"
+  "svg-preview":
+    openPreviewAutomatically: true
+  tabs:
+    enableVcsColoring: true
+  "tree-view":
+    focusOnReveal: false
+  welcome:
+    showOnStartup: false
+  whitespace: {}

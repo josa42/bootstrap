@@ -13,3 +13,11 @@
 #     'prefix': 'log'
 #     'body': 'console.log $1'
 #
+
+'.source.js':
+  'import from Ember':
+    'prefix': 'import-empty'
+    'body': 'const { $1 } = Ember;'
+  'import Ember.Object':
+    'prefix': 'import-object'
+    'body': 'const { Object: EmberObject } = Ember;'

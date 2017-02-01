@@ -21,13 +21,20 @@
   'alt-cmd-left': 'window:focus-pane-on-left'
   'cmd-alt-n': 'advanced-open-file:toggle'
 
+  'ctrl-tab ^ctrl': 'unset!'
+  'ctrl-tab': 'pane:show-next-item'
+  'ctrl-shift-tab ^ctrl': 'unset!'
+  'ctrl-shift-tab': 'pane:show-previous-item'
+
+  'ctrl-l ctrl-f': 'linter-eslint:fix-file'
+
 '.platform-darwin atom-pane atom-text-editor:not(.mini)':
   'cmd-/':	'editor:toggle-line-comments'
 
 'atom-text-editor:not(.mini)':
   'ctrl-e':	'editor:move-to-end-of-line'
+  'shift-cmd-R': 'tree-view:rename'
 
 
 '.platform-darwin atom-text-editor':
-  'cmd-r': 'package-manager:reload-project-package'
   'cmd-alt-n': 'advanced-open-file:toggle'
