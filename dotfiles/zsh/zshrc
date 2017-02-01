@@ -73,6 +73,23 @@ alias ql='qlmanage -p "$@" >& /dev/null'
 alias ips="ifconfig -a | perl -nle'/(\d+\.\d+\.\d+\.\d+)/ && print \$1'"
 alias myip="dig +short myip.opendns.com @resolver1.opendns.com"
 
+git-rm-gitkeep() {
+  if [ $# -eq "0" ]; then
+      DIR=$(pwd)
+  else
+      DIR=$1
+  fi
+
+  cd "$DIR" || return 1
+
+  for line in $(git ls-files | grep '/.gitkeep$'); do
+    EXTRA_FILES=$(git ls-files $(dirname "$line") | wc -l)
+    if [ $EXTRA_FILES -ne "1" ]; then
+      rm "$line"
+    fi
+  done
+}
+
 
 
 
