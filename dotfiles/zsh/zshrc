@@ -123,3 +123,5 @@ function bman {
   man "${1}" | man2html > "/tmp/${1}.html"
   open -a "Google Chrome" "/tmp/${1}.html"
 }
+
+loadScript "${HOME}/.zshrc.local"
