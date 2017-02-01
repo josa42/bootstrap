@@ -90,6 +90,20 @@ git-rm-gitkeep() {
   done
 }
 
+p() {
+  local proj=$(ls ~/projects | fzf --query="$*" --select-1);
+  if [[ "$proj" != "" ]]; then
+    cd "$HOME/projects/$proj" || exit 1
+  fi
+};
+
+pe() {
+  local proj=$(ls ~/projects | fzf --query="$*");
+  if [[ "$proj" != "" ]]; then
+    cd "$HOME/projects/$proj" || exit 1
+    atom .
+  fi
+};
 
 
 
