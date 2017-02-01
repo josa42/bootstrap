@@ -1,4 +1,3 @@
-
 function loadScript() {
   scriptPath=$1
   if [[ -s "${scriptPath}" ]]; then
@@ -6,6 +5,8 @@ function loadScript() {
   fi
 }
 
+export NVM_DIR="/Users/josa/.nvm"
+local BREW_PREFIX=$(brew --prefix)
 
 loadScript "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 loadScript "${NVM_DIR}/nvm.sh"
