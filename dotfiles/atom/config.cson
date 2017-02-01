@@ -1,31 +1,14 @@
 "*":
-  "activate-power-mode":
-    particles:
-      size: {}
-      spawnCount: {}
-      totalCount: {}
-    screenShake:
-      enabled: false
   "api-blueprint-preview":
     grammars: [
       "source.md"
     ]
-  "ask-stack":
-    autoDetectLanguage: true
   "atom-beautify":
     general:
-      _analyticsUserId: "98e491fa-bbd4-431d-bff4-304b80255a50"
+      analytics: false
       beautifyEntireFileOnSave: false
-  "atom-slack-snippets":
-    tokens: [
-      "ligadigital|xoxp-11883943776-11881921427-23452167603-4fbd2c04b1"
-    ]
   "autocomplete-plus": {}
   blame: {}
-  clippy:
-    agent: "Genie"
-    playSounds: false
-    showOnStartup: false
   core:
     allowPendingPaneItems: false
     audioBeep: false
