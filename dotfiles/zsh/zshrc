@@ -4,13 +4,20 @@
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 #
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
+function loadScript() {
+  scriptPath=$1
+  if [[ -s "${scriptPath}" ]]; then
+    source "${scriptPath}"
+  fi
+}
 
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+loadScript "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+loadScript "${NVM_DIR}/nvm.sh"
+loadScript "${HOME}/.iterm2_shell_integration.zsh"
+loadScript "${BREW_PREFIX}/etc/profile.d/z.sh"
+loadScript "${BREW_PREFIX}/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+loadScript "${BREW_PREFIX}/opt/zsh-history-substring-search/zsh-history-substring-search.zsh"
 
 zmodload zsh/terminfo
 bindkey "$terminfo[kcuu1]" history-substring-search-up
