@@ -117,3 +117,8 @@ man() {
     LESS_TERMCAP_us=$'\E[04;38;5;146m' \
     man "$@"
 }
+
+function bman {
+  man "${1}" | man2html > "/tmp/${1}.html"
+  open -a "Google Chrome" "/tmp/${1}.html"
+}
