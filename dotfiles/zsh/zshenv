@@ -1,14 +1,9 @@
-#
-# Defines environment variables.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
-
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
+
+export GOPATH=$HOME/projects-go
 
 path=(
   /usr/local/{bin,sbin}
@@ -20,10 +15,22 @@ path=(
   $HOME/bin
   $JAVA_HOME/bin
   $HOME/.rvm/bin
+  $GOPATH/bin
 )
 
+if command -v yarn >/dev/null 2>&1; then
+  path=($path yarn global bin)
+fi
+
+fpath=($HOME/bin/zsh-completions $fpath)
 
 
-export EDITOR=vim
-
+export EDITOR=nvim
 export GITCLICK_STORAGE_PATH=~/Dropbox/.sync/gitclick/.gitclick
+
+export SSH_AWS_USER='josa.gesell'
+
+export LESS='-F -g -i -M -R -S -w -z-4'
+
+# Puh...
+eval `ssh-agent | grep -v '^echo'`
