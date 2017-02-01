@@ -33,6 +33,8 @@ function prompt_josa_precmd {
   if (( $+functions[git-info] )); then
     git-info
   fi
+
+  echo -ne "\e]1;$_prompt_josa_pwd\a"
 }
 
 function prompt_josa_setup {
