@@ -1,6 +1,6 @@
 [user]
 	name = Josa Gesell
-	email = josa@gesell.me
+	email = josa.gesell@ligadigital.com
 
 [color]
 	diff = auto
@@ -11,16 +11,17 @@
 [core]
 	excludesfile = /Users/josa/.gitignore
 	quotepath = false
-	editor = subl -n -w
+	editor = vim
 	precomposeunicode = true
 
 [difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	cmd = /usr/local/bin/ksdiff -w \"$LOCAL\" \"$REMOTE\"
 	path =
 
 [mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.5/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	cmd = /usr/local/bin/ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	path =
+	trustExitCode = true
 
 [github]
 	user = josa42
@@ -46,58 +47,92 @@
 	tool = Kaleidoscope
 
 [alias]
+
+	# Damm typos
+	cmaster = checkout master
+
+	branch-name = "!git rev-parse --abbrev-ref HEAD"
+	# branch-rename = "!f() { [[ \"$1\" != \"\" ]] || exit 1; b=$(git rev-parse --abbrev-ref HEAD); git branch -m $1; git push origin :$b 2> /dev/null && git push -u origin $1  }; f"
+	branch-rename = "!f() { [[ \"$1\" != \"\" ]] || exit 1;  b=$(git rev-parse --abbrev-ref HEAD); git branch -m $1; git push origin :$b 2> /dev/null && git push -u origin $1; }; f"
+	# branch-name = "!git rev-parse --abbrev-ref HEAD"
+
+	publish = "!git push -u origin $(git branch-name)"
+	unpublish = "!git push origin :$(git branch-name)"
+
+	unstage = reset HEAD
+
 	each = submodule foreach git
 	all = "!all() { echo \"Entering '.'\"; git $*; git submodule foreach git $*; }; all"
 
+	each-update = "!git each checkout master && git each pull origin master"
+
 	recommit = "!git add -A; git commit --amend --no-edit"
 
-	ignored = clean -ndX
+	# cleanup = "!git fetch --prune && git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d"
+	# cl = "!f() { echo \"=> Fetch\"; git fetch --prune && if [[ \"$(git branch-name)\" = 'master' ]]; then  echo \"=> Delete merged branches\"; git branch --merged | grep -v \"\\*\" | xargs -n 1 git branch -d; fi }; f"
 
-	l = log --oneline
-	lg = log --graph --all --format=format:'%C(bold green)(%ar)%C(dim white) %C(reset)%C(white)%an - %s%C(reset) %C(reset)%C(bold yellow)%d%C(reset)' --abbrev-commit --date=relative
-	lb = log --all --format=format:'%C(bold green)(%ai)%C(dim white) %C(reset)%C(white)%an - %s%C(reset)'
+	update = "!git pull --rebase && git cleanup"
+
+	# cleanup-remote = "!git fetch --prune && git branch --remote --merged | grep -v \"\\*\" | xargs -n 1 echo"
+
+	ignored = clean -ndX
+	ignore = "!ignore() { touch .gitignore && echo \"$*\" >> .gitignore; }; ignore"
+	# unignore = "!unignore() { sed -i.bak '/test/d' .gitignore; rm -f .gitignore.bak; }; unignore"
 
 	update = !git pull --rebase --prune $@ && git submodule update --init --recursive
 
 	last = !git log --oneline | head -n1 | cut -d ' ' -f 2-
+
+	# create new or switch to feature branch
+	# feature = "!gitFeature() { if [[ \"$1\" = '' ]]; then exit 1; else branch=\"${2:-feature}/$1\"; if [[ \"`git branch --list $branch`\" != \"\" ]]; then git checkout $branch; else git checkout -b $branch; fi fi  }; gitFeature"
+	# # Push and delete local feature branch
+	# feature-close = "!gitFeatureClose() { branch=\"${2:-feature}/$1\"; if [[ \"$1\" = '' ]] || [[ `git branch --list $branch` = '' ]]; then exit 1; else git checkout $branch && git push origin $branch && git checkout master && git branch -D $branch; fi  }; gitFeatureClose"
+	# # list feature branches
+	# feature-list = "!git branch | grep -s feature | grep -v 'origin' | sort | uniq || true"
+	# feature-list-all = "!git branch -a | grep -s feature | sort | uniq || true"
+	# feature-list-remote = "!git branch -r | grep -s feature | sort | uniq || true"
+
 	# rename = !git commit -am "$(git last)"
-
-	u = !git pull && git submodule update
-
 	fetch = !git fetch && !git remote update --prune
+
+	push-all = !git push && git submodule foreach git push
+	pull-all = !git pull && git submodule foreach git pull
+
+	# tags = !git tag --list | node ~/development/tools/version-sort/main.js
+	fuck-it = reset HEAD --hard
+
+	cdiff = "!if [ $(which cdiff) ]; then git diff -w | cdiff -s -w0; else git diff --color -w; fi"
+	cdiffc = "!if [ $(which cdiff) ]; then git diff -w --cached | cdiff -s -w0; else git diff --color -w --cached; fi"
+
+	log-new = "!git log `git describe --tags --abbrev=0`..HEAD --oneline"
+	ln = "!git log `git describe --tags --abbrev=0`..HEAD --oneline"
+
+
+	# Shortcuts
+
+	l = log --oneline
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+	lb = log --all --format=format:'%C(bold green)(%ai)%C(dim white) %C(reset)%C(white)%an - %s%C(reset)'
 
 	sub = submodule
 	su = submodule update
 
-	sub-sync = !git each c master; git each pull origin master
-
 	s = status --short
+	sl = status
 	c = checkout
-	cl = clone
-	cm = commit
+	cm = commit --message
+	ca = !git add -A && git commit --message
 	b = branch
 	a = add
 	aa = add -A
 	p = pull
-	f = fetch
 
-	fl = !git branch -r | grep -s feature || :
+	f = !git feature
+	fl = !git feature-list
+	flr = !git feature-list-remote
+	fla = !git feature-list-all
 
-	push-all = !git push && git submodule foreach git push
-	pull-all = !git pull && git submodule foreach git pull
-	tags = !git tag --list | node ~/development/tools/version-sort/main.js
-	fuck = reset HEAD --hard
-
-	cdiff = !git diff -w | cdiff -s -w0
-	cdiffc = !git diff -w --cached | cdiff -s -w0
-
-	# uebergeben = commit
-	# protokoll = log
-	# druecken = push
-	# ziehen = pull
-	# zustand = status
-	# zweig = branch
-	# markieren = tag
+	fu = !git fuck-it
 
 [push]
 	default = current
@@ -107,3 +142,8 @@
 
 [include]
   path = .gitconfig.local
+
+[init]
+	templatedir = ~/.git-templates
+[fetch]
+	prune = true
